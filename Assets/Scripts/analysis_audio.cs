@@ -27,7 +27,6 @@ public class analysis_audio : MonoBehaviour
     private Sprite[] SenseImages;
     private float SenseTimer;
     private float clipLength;
-    //_audioSource.clip = Microphone.Start(Microphone.devices[0], false, 500, AudioSettings.outputSampleRate);
     private Sensitivity nowSense = Sensitivity.normal;
     private Sprite NowSenceImage;
     private int vibeNum;
@@ -70,22 +69,22 @@ public class analysis_audio : MonoBehaviour
     GameObject[] speakerObjects;
     GameObject[] circleDisplayObjects;
 
-    void OnEnable()                                         //アクティブになれば呼び出される。
+    void OnEnable()
     {
-        InfoScript = FindObjectOfType<IDInfoManager>();     //IDInfoManagerの中の関数にアクセスできるようにする。
+        InfoScript = FindObjectOfType<IDInfoManager>();
 
-        IPlist = InfoScript._IPlist;                        //それぞれの変数に関数の値を入れて初期化を行う。
+        IPlist = InfoScript._IPlist;
         clientList = InfoScript._clientList;
         InfoScript._clientList = null;
         Ports = InfoScript._Ports;
         MainDeviceNum = InfoScript.MainDeviceNum;
     }
 
-    void OnDisable()                                        //非アクティブになれば呼ばれる。
+    void OnDisable()
     {
         for (int i = 0; i < clientList.Count; i++)
         {
-            clientList[i]?.Dispose();                       //もしnullではなかったら、OSCの接続を遮断する。
+            clientList[i]?.Dispose();
             Debug.Log("OSC:切断");
         }
         clientList = null;
@@ -99,10 +98,10 @@ public class analysis_audio : MonoBehaviour
     void Start()
     {
         SenseImage = SensePanel.GetComponent<Image>();
-        var InfoScript = FindObjectOfType<IDInfoManager>();     //IDInfoManagerをInfoScriptに代入。
+        var InfoScript = FindObjectOfType<IDInfoManager>();
         delayTime = InfoScript.DelayTime;
         print("delaytime: " + delayTime);
-        m_AudioSource.clip = InfoScript.newAudioClip;           //オーディオを設定
+        m_AudioSource.clip = InfoScript.newAudioClip;
         clipLength = InfoScript.newAudioClip.length;
         reverb_AudioSource.clip = InfoScript.newAudioClip_forReverb;
         audioBuffer = new Queue<float>();
@@ -110,15 +109,15 @@ public class analysis_audio : MonoBehaviour
         StartMusic();
         if (GameMode)
         {
-            this.GetComponent<AudioLowPassFilter>().cutoffFrequency = 1000;     //AudioLowPassFilterのcutoffFrequencyを1000にする。
-            var filter = this.gameObject.AddComponent<AudioHighPassFilter>();   //AudiohigtPassFilterのcutoffFrequencyを800にする。
+            this.GetComponent<AudioLowPassFilter>().cutoffFrequency = 1000;
+            var filter = this.gameObject.AddComponent<AudioHighPassFilter>();
             filter.cutoffFrequency = 800;
-            fftKind = FFTWindow.Triangle;                                       //FFTを設定
+            fftKind = FFTWindow.Triangle;
         }
-        speakerObjects = GameObject.FindGameObjectsWithTag("Speakers");         //変数にゲームオブジェクトタグが""のものを探して代入する。
+        speakerObjects = GameObject.FindGameObjectsWithTag("Speakers");
         speakerVfxObjects = GameObject.FindGameObjectsWithTag("SpeakersVFX");
         circleDisplayObjects = GameObject.FindGameObjectsWithTag("CircleDisplays");
-        foreach (var obj in speakerObjects)                                     //コンポーネントを取得してリストに追加する。
+        foreach (var obj in speakerObjects)
         {
             speakeranimemanagers.Add(obj.GetComponent<SpeakerAnimeManager>());
         }
@@ -143,7 +142,7 @@ public class analysis_audio : MonoBehaviour
         }
 
 
-        GetComponent<LineRenderer>().SetPositions(m_Positions);     //取得したラインレンダラーの位置情報を"m_Positions"にする。
+        GetComponent<LineRenderer>().SetPositions(m_Positions);
         if (m_AudioSource.clip == null)
         {
             Debug.LogWarning("AudioClip not set in the AudioSource component.");
@@ -155,25 +154,25 @@ public class analysis_audio : MonoBehaviour
     {
 
         Debug.Log(bufferSampleSize);
-        await FindObjectOfType<TCPSender>().TrySend("StartMusic/" + 1); //「StartMusic/1」を送信する。送信が完了するまで待機。
+        await FindObjectOfType<TCPSender>().TrySend("StartMusic/" + 1);
         await UniTask.Delay(TimeSpan.FromSeconds(delayTime));
         m_AudioSource.Play();
         StartReverbMusic();
-        var Rootmotions = FindObjectsOfType<RootMotion>();      //Rootmotionsを代入する。
-        foreach (var thisScript in Rootmotions)                 //格納されている分だけ、モーションの初期化を行う。
+        var Rootmotions = FindObjectsOfType<RootMotion>();
+        foreach (var thisScript in Rootmotions)
         {
             thisScript.InitializeMotion();
         }
-        await UniTask.Delay(TimeSpan.FromSeconds(clipLength + 5));    //音楽の再生が終わるまで待つ。
-        FindObjectOfType<PostManager>().StartFadeOut();             //フェードアウトを行う。
+        await UniTask.Delay(TimeSpan.FromSeconds(clipLength + 5));
+        FindObjectOfType<PostManager>().StartFadeOut();
         Debug.Log("Music Finished");
-        SendTheMusicsEnd(clientList);                               //音楽が終了したことを通知する。
-        await UniTask.Delay(TimeSpan.FromSeconds(0.5));             //0.5秒待機する。
-        OnDisable();                                                //オブジェクト無効化
-        Destroy(FindObjectOfType<TCPSender>().gameObject);          //TCPSencerにあるゲームオブジェクトを削除する。
-        Destroy(InfoScript.gameObject);                             //InfoScriptのgameObjectを削除する。
-        await UniTask.Delay(TimeSpan.FromSeconds(2));               //2秒待機する。
-        if (Application.platform == RuntimePlatform.Android)    //もしもAndroidなら再起動。
+        SendTheMusicsEnd(clientList);
+        await UniTask.Delay(TimeSpan.FromSeconds(0.5));
+        OnDisable();
+        Destroy(FindObjectOfType<TCPSender>().gameObject);
+        Destroy(InfoScript.gameObject);
+        await UniTask.Delay(TimeSpan.FromSeconds(2));
+        if (Application.platform == RuntimePlatform.Android)
         {
             RebootAppSystem.RestartApp();
         }
@@ -260,9 +259,6 @@ public class analysis_audio : MonoBehaviour
         // FFT用のデータを取得
         float[] spectrum = new float[RESOLUTION];
         m_AudioSource.GetSpectrumData(spectrum, 0, fftKind);
-
-        // RMS正規化を行う
-        // spectrum = RMSNormalize(spectrum);
 
         var max = 0;
         float max_volume = 0;

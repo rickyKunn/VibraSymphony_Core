@@ -25,7 +25,6 @@ public class FindFolderManager : MonoBehaviour
     private List<string> FilesPath = new List<string>();
     private List<string> FilesName = new List<string>();
 
-    // Start is called before the first frame update
     async void Start()
     {
         permissionAdmitted = SetPermission();
@@ -37,7 +36,6 @@ public class FindFolderManager : MonoBehaviour
         FindFolders();
     }
 
-    // Update is called once per frame
     void Update()
     {
 

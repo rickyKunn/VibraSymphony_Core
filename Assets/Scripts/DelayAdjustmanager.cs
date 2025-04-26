@@ -8,8 +8,8 @@ using UnityEngine;
 public class DelayAdjustmanager : MonoBehaviour
 {
     private float SendingDelayTime;
-    private int qSamples = 512; //�z��̃T�C�Y
-    private float threshold = 0.04f; //�s�b�`�Ƃ��Č��o����ŏ��̕��z
+    private int qSamples = 512;
+    private float threshold = 0.04f;
     private float stopWatch;
     private bool startStopWatch;
     private Vector3[] LinePos = new Vector3[512];
@@ -21,7 +21,6 @@ public class DelayAdjustmanager : MonoBehaviour
     private float musicOfset;
     private bool StartFFT;
     [SerializeField] private GameObject AdjustmentPanel;
-    // Start is called before the first frame update
     void Start()
     {
         audiosource = this.GetComponent<AudioSource>();
@@ -32,7 +31,6 @@ public class DelayAdjustmanager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (StartFFT == false) return;

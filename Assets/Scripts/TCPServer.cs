@@ -17,11 +17,6 @@ public class TCPServer : MonoBehaviour
 
     [SerializeField]
     Text debugtext;
-
-    //================================================================================
-    // 変数
-    //================================================================================
-    // この IP アドレスとポート番号はクライアント側と統一する
     public string m_ipAddress = "127.0.0.1";
     public int m_port = 2001;
     private bool fileSent;
@@ -161,9 +156,7 @@ public class TCPServer : MonoBehaviour
         }
 
     }
-    /// <summary>
-    /// 破棄する時に呼び出されます
-    /// </summary>
+
     private void OnDestroy()
     {
         // 通信に使用したインスタンスを破棄します
@@ -172,53 +165,3 @@ public class TCPServer : MonoBehaviour
         //m_tcpListener?.Stop();
     }
 }
-
-//while (true)
-//{
-//    var buffer = new byte[256];
-//    var count = m_networkStream.Read(buffer, 0, buffer.Length);
-
-
-//    //using (FileStream fileStream = new FileStream(Application.dataPath + "/testMusic.Png", FileMode.Create, FileAccess.ReadWrite))
-//    //{
-//    //    debugtext.text += "Creating File...";
-//    //    m_networkStream.CopyTo(fileStream); //Android側が送信完了したら自動的に切断され次に進む
-
-//    //    UnityEngine.Debug.Log("切断");
-//    //    debugtext.text += "End Connection...";
-//    //}
-
-//    // クライアントからの接続が切断された場合は
-//    if (count == 0)
-//    {
-//        UnityEngine.Debug.Log("切断");
-
-//        // 通信に使用したインスタンスを破棄して
-//        OnDestroy();
-
-//        // 再度クライアントからの接続を待機します
-//        //Task.Run(() => OnProcess());
-
-//        break;
-//    }
-
-//    // クライアントから文字列を受信した場合は
-//    // GUI とログに出力します
-//    var message = Encoding.UTF8.GetString(buffer, 0, count);
-//    m_message += message + "\n";
-//    //var newint = int.Parse(message);
-//    UnityEngine.Debug.LogFormat("受信成功：{0}", message);
-//    //if (sendedInt != 0 && sendedInt + 1 == newint)
-//    //{
-//    //    //UnityEngine.Debug.LogFormat("受信成功：{0}", message);
-//    //}
-//    //else
-//    //{
-//    //    UnityEngine.Debug.LogError("??");
-//    //}
-//    //sendedInt = newint;
-//}
-
-// クライアントからの接続が完了したので
-// クライアントから文字列が送信されるのを待機します
-// 通信に使用したインスタンスを破棄

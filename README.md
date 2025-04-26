@@ -60,7 +60,7 @@ VibraSymphonyの中核となるプログラム部分のみを抜粋した簡易�
 - 閲覧および参照は自由ですが、許可なく他用途に使用しないでください
 
 その他の目的での使用を希望される場合は、下記までご連絡ください。  
-**ritsuki.kobayashi@gmail.com**
+**kobayashiritsuki@gmail.com**
 
 ---
 

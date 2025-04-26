@@ -77,7 +77,7 @@ public class FindFolderManager : MonoBehaviour
         if (string.IsNullOrEmpty(musicPath)) return;
 
         DirectoryInfo dataDir = new DirectoryInfo(musicPath);
-        var files = dataDir.GetFiles("*.mp3"); // MP3ファイルのみを取得
+        var files = dataDir.GetFiles("*.mp3");
         Debug.Log(musicPath + "   num:" + files.Length);
 
         for (int i = 0; i < files.Length; i++)

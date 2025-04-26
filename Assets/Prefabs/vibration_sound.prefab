@@ -11,18 +11,18 @@ GameObject:
   - component: {fileID: 7451841987679269041}
   - component: {fileID: 8700399293068609788}
   - component: {fileID: 5053962842353437472}
-  - component: {fileID: 2201944109222995525}
   - component: {fileID: 7042611364362436516}
   - component: {fileID: 2166454873462039731}
   - component: {fileID: 2354644804002510295}
-  - component: {fileID: 5951698974270481331}
+  - component: {fileID: 90287396824116029}
+  - component: {fileID: 971350941033806976}
   m_Layer: 0
-  m_Name: vibration_sound 1
+  m_Name: vibration_sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7451841987679269041
 Transform:
   m_ObjectHideFlags: 0
@@ -47,12 +47,13 @@ AudioSource:
   m_GameObject: {fileID: 694292038612813627}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -107295996738904397, guid: 26d1c5997b4d245109711855fdaf35e8, type: 2}
-  m_audioClip: {fileID: 8300000, guid: c5984459a53574a8d96e9e545df05a48, type: 3}
-  m_PlayOnAwake: 1
+  OutputAudioMixerGroup: {fileID: -107295996738904397, guid: 5872801bfc098429f9c24485ccf6ff20, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -62,9 +63,9 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 1
+  BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -94,7 +95,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.45
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -124,7 +125,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 1.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -142,7 +143,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694292038612813627}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -152,6 +153,9 @@ LineRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1260,29 +1264,6 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!164 &2201944109222995525
-AudioReverbFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694292038612813627}
-  m_Enabled: 1
-  m_DryLevel: 0
-  m_Room: 0
-  m_RoomHF: 0
-  m_DecayTime: 1
-  m_DecayHFRatio: 0.5
-  m_ReflectionsLevel: -10000
-  m_ReverbLevel: 0
-  m_ReverbDelay: 0.04
-  m_Diffusion: 100
-  m_Density: 100
-  m_HFReference: 5000
-  m_RoomLF: 0
-  m_LFReference: 250
-  m_ReflectionsDelay: 0
-  m_ReverbPreset: 27
 --- !u!169 &7042611364362436516
 AudioLowPassFilter:
   m_ObjectHideFlags: 0
@@ -1290,7 +1271,7 @@ AudioLowPassFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694292038612813627}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_LowpassResonanceQ: 1
   lowpassLevelCustomCurve:
@@ -1315,10 +1296,10 @@ PlayableDirector:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694292038612813627}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 6e25fdc6fe84a453ca80ff95190ddfe9, type: 2}
-  m_InitialState: 1
+  m_PlayableAsset: {fileID: 11400000, guid: 7d00beb8c3d7a4cba825cc318e2f2b88, type: 2}
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -1339,6 +1320,10 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 4496650047363212317, guid: 6e25fdc6fe84a453ca80ff95190ddfe9, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 2148648061691066472, guid: 7d00beb8c3d7a4cba825cc318e2f2b88, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 4496650047363212317, guid: 7d00beb8c3d7a4cba825cc318e2f2b88, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!81 &2354644804002510295
@@ -1349,7 +1334,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694292038612813627}
   m_Enabled: 0
---- !u!114 &5951698974270481331
+--- !u!114 &90287396824116029
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1358,19 +1343,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 694292038612813627}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5bfd90dbbbbc4edda1e80c857718344, type: 3}
+  m_Script: {fileID: 11500000, guid: e9eb6dd22e5ae4a4d96641a2ca49061f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Android: 1
-  iOS: 0
-  AndroidObj: {fileID: 0}
-  DebugFeild: {fileID: 0}
+  SensePanel: {fileID: 0}
+  SenseImages:
+  - {fileID: 21300000, guid: ff2ffd6b331e7412ab2f74b2339b5f1d, type: 3}
+  - {fileID: 21300000, guid: 18d4c26f0ae6d4af098206e2db388fc6, type: 3}
+  - {fileID: 21300000, guid: f99f0f50bc1b949148815d0133a93a17, type: 3}
+  reverb_AudioSource: {fileID: 0}
+  m_AudioSource: {fileID: 8700399293068609788}
   thresholdFrequency: 440
+  GameMode: 0
   m_AmpGain: 300
   sharp: 0.5
   VibeTime: 0.2
-  IPAdressAndroid: 10.186.129.157
-  IPAdressiOS: 
-  PortNumiOS: 8000
-  PortNumAndroid: 9000
+  DanceAnimator: {fileID: 0}
+  SoundLength: 26
+  IPlist: []
+  BeforePort: 9000
   SamplingRate: 12000
+--- !u!167 &971350941033806976
+AudioReverbZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694292038612813627}
+  m_Enabled: 0
+  m_MinDistance: 50
+  m_MaxDistance: 300
+  m_ReverbPreset: 27
+  m_Room: -1100
+  m_RoomHF: -1300
+  m_DecayTime: 8.1
+  m_DecayHFRatio: 0.72
+  m_Reflections: -1400
+  m_ReflectionsDelay: 0.02
+  m_Reverb: 16
+  m_ReverbDelay: 0.1
+  m_HFReference: 4000
+  m_Diffusion: 100
+  m_Density: 100
+  m_LFReference: 250
+  m_RoomLF: -1300

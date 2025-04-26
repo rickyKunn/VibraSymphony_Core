@@ -4879,64 +4879,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e0640ba4863cb4c3c8f90e691eb015fe, type: 3}
   m_PrefabInstance: {fileID: 586515347}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &592606204 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 694292038612813627, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-  m_PrefabInstance: {fileID: 651994597}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &592606212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592606204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9eb6dd22e5ae4a4d96641a2ca49061f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SensePanel: {fileID: 723929966}
-  SenseImages:
-  - {fileID: 21300000, guid: ff2ffd6b331e7412ab2f74b2339b5f1d, type: 3}
-  - {fileID: 21300000, guid: 18d4c26f0ae6d4af098206e2db388fc6, type: 3}
-  - {fileID: 21300000, guid: f99f0f50bc1b949148815d0133a93a17, type: 3}
-  reverb_AudioSource: {fileID: 1189623395}
-  m_AudioSource: {fileID: 651994598}
-  thresholdFrequency: 440
-  GameMode: 0
-  m_AmpGain: 300
-  sharp: 0.5
-  VibeTime: 0.2
-  DanceAnimator: {fileID: 916134204}
-  SoundLength: 26
-  IPlist: []
-  BeforePort: 9000
-  SamplingRate: 12000
---- !u!167 &592606226
-AudioReverbZone:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592606204}
-  m_Enabled: 0
-  m_MinDistance: 50
-  m_MaxDistance: 300
-  m_ReverbPreset: 27
-  m_Room: -1100
-  m_RoomHF: -1300
-  m_DecayTime: 8.1
-  m_DecayHFRatio: 0.72
-  m_Reflections: -1400
-  m_ReflectionsDelay: 0.02
-  m_Reverb: 16
-  m_ReverbDelay: 0.1
-  m_HFReference: 4000
-  m_Diffusion: 100
-  m_Density: 100
-  m_LFReference: 250
-  m_RoomLF: -1300
 --- !u!1001 &610580584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5258,53 +5200,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 90287396824116029, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
+      propertyPath: SensePanel
+      value: 
+      objectReference: {fileID: 723929966}
+    - target: {fileID: 90287396824116029, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
+      propertyPath: DanceAnimator
+      value: 
+      objectReference: {fileID: 916134204}
+    - target: {fileID: 90287396824116029, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
+      propertyPath: reverb_AudioSource
+      value: 
+      objectReference: {fileID: 1189623395}
     - target: {fileID: 694292038612813627, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
       propertyPath: m_Name
-      value: vibration_sound 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 694292038612813627, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2166454873462039731, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2166454873462039731, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: m_InitialState
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2166454873462039731, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: m_PlayableAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 7d00beb8c3d7a4cba825cc318e2f2b88, type: 2}
-    - target: {fileID: 2166454873462039731, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: m_SceneBindings.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2166454873462039731, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: m_SceneBindings.Array.data[8].key
-      value: 
-      objectReference: {fileID: 2148648061691066472, guid: 7d00beb8c3d7a4cba825cc318e2f2b88, type: 2}
-    - target: {fileID: 2166454873462039731, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: m_SceneBindings.Array.data[9].key
-      value: 
-      objectReference: {fileID: 4496650047363212317, guid: 7d00beb8c3d7a4cba825cc318e2f2b88, type: 2}
-    - target: {fileID: 2201944109222995525, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354644804002510295, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5053962842353437472, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7042611364362436516, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      value: vibration_sound
       objectReference: {fileID: 0}
     - target: {fileID: 7451841987679269041, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5346,64 +5256,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8700399293068609788, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: Loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8700399293068609788, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: Mute
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8700399293068609788, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8700399293068609788, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8700399293068609788, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: BypassEffects
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8700399293068609788, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8700399293068609788, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: BypassReverbZones
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8700399293068609788, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -107295996738904397, guid: 5872801bfc098429f9c24485ccf6ff20, type: 2}
-    - target: {fileID: 8700399293068609788, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 8700399293068609788, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
-      value: 1.1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5951698974270481331, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-    - {fileID: 2201944109222995525, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 694292038612813627, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 592606212}
-    - targetCorrespondingSourceObject: {fileID: 694292038612813627, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 592606226}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
---- !u!82 &651994598 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8700399293068609788, guid: 146fa3946b33c445b9f1501d55657a13, type: 3}
-  m_PrefabInstance: {fileID: 651994597}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &655597828
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,15 +5,10 @@ using System.IO;
 
 public class CSVWriter : MonoBehaviour
 {
-    private string filePath;
-
-    void Start()
-    {
-        // CSVファイルのパスを設定 (アプリの保存可能なディレクトリを使用)
-    }
-
     public async void WriteCsv(List<string> Devicedata, string DelayData)
     {
+        string filePath;
+
         if (Application.platform == RuntimePlatform.Android)
         {
             filePath = Path.Combine(Application.persistentDataPath, "PreData.csv");

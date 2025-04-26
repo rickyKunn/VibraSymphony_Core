@@ -15,13 +15,13 @@ VibraSymphonyの中核となるプログラム部分のみを抜粋した簡易�
 
 ## 連携プロジェクトについて（依存関係）
 
-本リポジトリは単体でも動作確認は可能ですが、**本来のVibraSymphonyの全機能を再現するためには、別リポジトリ「VibraSymphony_Connector」との連携が必要不可欠です。**
+本リポジトリは単体でも動作確認は可能ですが、**本来のVibraSymphonyの全機能を再現するためには、別リポジトリ「VibraSymphony_MobileAgent」との連携が必要不可欠です。**
 
 ---
 
 ### 関連リポジトリ
 
-**[VibraSymphony_Connector](https://github.com/rickyKunn/VibraSymphony_MobileAgent)**  
+**[VibraSymphony_MobileAgent](https://github.com/rickyKunn/VibraSymphony_MobileAgent)**  
 
 ---
 

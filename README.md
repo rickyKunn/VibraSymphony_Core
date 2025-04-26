@@ -21,7 +21,7 @@ VibraSymphonyの中核となるプログラム部分のみを抜粋した簡易�
 
 **[VibraSymphony_MobileAgent](https://github.com/rickyKunn/VibraSymphony_MobileAgent)**  
 
----
+
 
 ### 役割と連携内容
 
@@ -36,7 +36,7 @@ VibraSymphonyの中核となるプログラム部分のみを抜粋した簡易�
 
 これにより、音楽信号と振動が同期した体験をユーザーに提供します。
 
----
+
 
 ### 利用手順
 

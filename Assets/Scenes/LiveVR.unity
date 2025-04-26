@@ -6570,6 +6570,7 @@ Transform:
   m_Children:
   - {fileID: 1007160624}
   - {fileID: 2063284635}
+  - {fileID: 1124121897}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &870767039
@@ -7882,7 +7883,7 @@ GameObject:
   - component: {fileID: 1124121895}
   - component: {fileID: 1124121894}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: floar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7970,12 +7971,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124121893}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.11, z: 0}
-  m_LocalScale: {x: 150, y: 10, z: 150}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.21599998, z: 0.013333333}
+  m_LocalScale: {x: 10, y: 0.6666666, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 855730763}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1132932125
 GameObject:
@@ -13285,4 +13286,3 @@ SceneRoots:
   - {fileID: 33989920}
   - {fileID: 84893912}
   - {fileID: 855730763}
-  - {fileID: 1124121897}

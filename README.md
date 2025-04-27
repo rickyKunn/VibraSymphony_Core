@@ -15,7 +15,7 @@ VibraSymphonyの中核となるプログラム部分のみを抜粋した簡易�
 
 ## 連携プロジェクトについて（依存関係）
 
-本リポジトリは、 **別リポジトリ「VibraSymphony_MobileAgent」との連携が必要不可欠です。**
+本リポジトリは、 **別リポジトリ「VibraSymphony_MobileAgent」と連携して使用することを前提としています。**
 
 ### 関連リポジトリ
 
@@ -25,36 +25,34 @@ VibraSymphonyの中核となるプログラム部分のみを抜粋した簡易�
 
 ### 役割と連携内容
 
-**VibraSymphony_MobileAgent** は、モバイルデバイスと本プロジェクトをリアルタイムで接続するためのアプリケーションです。
+**VibraSymphony_Core** は、以下の役割を担います：
 
-主な連携内容は以下の通りです：
+- MobileAgentから送信された MP3 ファイルを TCP/IP 経由で受信
+- 受信したMP3を再生しながらリアルタイムにFFT解析を実施
+- 音楽の各成分（ドラム・ベースなど）を検出し、検出タイミングに応じたOSC信号をMobileAgentへ送信
 
-- Android デバイスから MP3 ファイルを TCP/IP 経由で送信
-- Core 側がその MP3 を再生・FFT解析し、ドラムやベースなどの成分を検出
-- 検出結果を OSC (Open Sound Control) を用いて Android デバイスに送信
-- Android 側で受信した信号に基づいて、リアルタイムでバイブレーションを発生
+これにより、音楽データの解析と、解析結果に基づくリアルタイムなフィードバック（バイブレーション制御）が実現されます。
 
-これにより、音楽信号と振動が同期した体験をユーザーに提供します。
 
 ---
 
 ## 利用手順
 
-1. Android 実機上で **VibraSymphony_MobileAgent(以下、「MobileAgent」と略記)** を起動します（Unityフォルダを実機にビルド）。
+1. Android 実機上で **VibraSymphony_MobileAgent(以下、「MobileAgent」と略記)** を起動します（Unityフォルダを実機にビルド・インストール、または同梱されている `.apk` ファイルをインストール)
 
-2. Unity エディタ(または実行ファイル)で **VibraSymphony_Core(以下、「Core」と略記)** を開き、StartSceneを再生します(実行ファイルの場合自動で再生される)。
+2. Unity エディタ(または実行ファイル)で **VibraSymphony_Core(以下、「Core」と略記)** を開き、StartSceneを再生(実行ファイルの場合、自動で再生される)
 
-3. `MobileAgent`で `Main` ボタンを選択
+3. **MobileAgent** を起動し、`Main` ボタンを選択
 
 4. **MobileAgent** で画面左下に表示された `ID` を **Core** の `Devices` を追加し入力
 
-5. **Core** の `GO!!` ボタンを選択
-   
-6. **MobileAgent**で `Pick Music` から曲を選択(Androidのダウンロードフォルダに入っている曲の一覧が表示されます)
+5. **Core側** で `GO!!` ボタンを選択し、接続を確立
 
-(手順5,6 はどちらからでも構いません)
+6. **MobileAgent側** で `Pick Music` ボタンを選択し、お好みの曲を選択(Androidのダウンロードフォルダに入っている曲の一覧が表示されます)
 
-8. 曲の送受信等の通信が完了すると自動でシーンが再生されます
+(手順5、6の順序はどちらでも問題ありません)
+
+7. 曲の送受信が完了すると、自動的に連携再生が開始されます。
 
 
 - 本システムは、**CoreとMobileAgentが同一Wi-Fiネットワーク上にあることが必須です。**

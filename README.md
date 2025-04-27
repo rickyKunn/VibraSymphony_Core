@@ -40,9 +40,22 @@ VibraSymphonyの中核となるプログラム部分のみを抜粋した簡易�
 
 ### 利用手順
 
-1. Android 実機上で `VibraSymphony_MobileAgent` を起動します（Unityフォルダを実機にビルド）。
+1. Android 実機上で **VibraSymphony_MobileAgent(以下、「MobileAgent」と略記)** を起動します（Unityフォルダを実機にビルド）。
 
-2. Unity エディタで `VibraSymphony_Core` を開き、シーンを再生します。
+2. Unity エディタ(または実行ファイル)で **VibraSymphony_Core(以下、「Core」と略記)** を開き、StartSceneを再生します(実行ファイルの場合自動で再生される)。
+
+3. `MobileAgent`で `Main` ボタンを選択
+
+4. **MobileAgent** で画面左下に表示された `ID` を **Core** の `Devices` を追加し入力
+
+5. **Core** の `GO!!` ボタンを選択
+   
+6. **MobileAgent**で `Pick Music` から曲を選択(Androidのダウンロードフォルダに入っている曲の一覧が表示されます)
+
+(手順5,6 はどちらからでも構いません)
+
+8. 曲の送受信等の通信が完了すると自動でシーンが再生されます
+
 
 - 本システムは、**CoreとMobileAgentが同一Wi-Fiネットワーク上にあることが必須です。**
 - 使用している TCP/IP や OSC プロトコルが **制限されているネットワーク（例：学内ネットワーク、ゲストWi-Fiなど）では通信が確立できず、動作しません。**
